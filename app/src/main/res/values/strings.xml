@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PluginOne</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">plugin one fragment</string>
+    <string name="this_activity_created_by_plugin_one">This Activity created by Plugin One</string>
+</resources>

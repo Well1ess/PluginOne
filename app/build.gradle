@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "nim.shs1330.netease.com.pluginone"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //multiDexEnabled true
+        //multiDexKeepProguard file('proguard-rules.pro') // keep specific classes using proguard syntax
+        //multiDexKeepFile file('maindexlist.txt') // keep specific classes
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    dexOptions {
+//        javaMaxHeapSize "4g"
+//        preDexLibraries = false
+//        additionalParameters = ['--multi-dex', '--main-dex-list='+ project.rootDir.absolutePath + '/app/maindexlist.txt', '--minimal-main-dex',
+//                                '--set-max-idx-number=65535']
+//    }
+//    afterEvaluate {
+//        tasks.matching {
+//            it.name.startsWith('dex')
+//        }.each { dx ->
+//            def listFile = project.rootDir.absolutePath+'/app/maindexlist.txt'
+//            if (dx.additionalParameters == null) {
+//                dx.additionalParameters = []
+//            }
+//            //表示当方法数越界时则生成多个dex文件（我的没有越界，貌似也生成了两个）
+//            dx.additionalParameters += '--multi-dex'
+//            //这个指定了listFile中的类（即maindexlist.txt中的类）会打包到主dex中，不过注意下一条。
+//            dx.additionalParameters += '--main-dex-list=' +listFile
+//            //表明只有-main-dex-list所指定的类（在我的配置中，就是app目录下的maindexlist.txt中包含的类）才能打包到主dex中，如果没有这个选项，上个选项就会失效
+//            dx.additionalParameters += '--minimal-main-dex'
+//        }
+//    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    //compile 'com.android.support:multidex:1.0.0'
+    testCompile 'junit:junit:4.12'
+}

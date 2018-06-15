@@ -1,0 +1,4 @@
+nim/shs1330/netease/com/pluginone/JsonInfoActivity.class
+nim/shs1330/netease/com/pluginone/PluginOneMainFragment.class
+nim/shs1330/netease/com/pluginone/MainActivity.class
+nim/shs1330/netease/com/pluginone/PluginOneApp.class
